@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Community Hass.io Add-ons: chrony
+# Runs chrony daemon
+# ==============================================================================
+# shellcheck disable=SC1091
+bashio::log.info "Starting chronyd..."
+
+exec chronyd -d -x
