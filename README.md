@@ -1,6 +1,5 @@
 # Community Hass.io Add-ons: chrony
 
-
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
 [![License][license-shield]](LICENSE.md)
@@ -20,13 +19,12 @@
 
 [![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
 
-
 chrony NTP Server.
 
 ## About
 
 An NTP server accessible by all hosts on the local network, useful for setting
-time on devices with controlled internet access (such as cameras).  
+time on devices with controlled internet access (such as cameras).
 Please note this addon will not set the clock of the operating system.
 
 ## Installation
@@ -35,9 +33,9 @@ The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Hass.io add-on.
 
 1. [Add our Hass.io add-ons repository][repository] to your Hass.io instance.
-2. Install the "chrony" add-on.
-3. Start the "chrony" add-on
-4. Check the logs of the "chrony" add-on to see if everything went well.
+1. Install the "chrony" add-on.
+1. Start the "chrony" add-on
+1. Check the logs of the "chrony" add-on to see if everything went well.
 
 **NOTE**: Do not add this repository to Hass.io, please use:
 `https://github.com/hassio-addons/repository`.
@@ -73,6 +71,26 @@ Please note that each level automatically includes log messages from a
 more severe level, e.g., `debug` also shows `info` messages. By default,
 the `log_level` is set to `info`, which is the recommended setting unless
 you are troubleshooting.
+
+### Option: `mode`
+
+The `mode` option configures chrony to use either `pool` or `server` mode.
+These options are:
+
+- `pool`: References a pool of servers such as pool.ntp.org (Recommended).
+- `server`: References a list of specific names or addresses.
+  
+Based on the mode the `ntp_pool` or `ntp_server` option will be used.
+
+### Option: `ntp_pool`
+
+Used by pool mode and configures the pool name to be used, should be a DNS
+record with multiple entries. The application will select which to reference.
+
+### Option: `ntp_server`
+
+Used by server mode, an array of server names or IP Addresses used as the
+time source. The application will select which to reference.
 
 ## Known issues and limitations
 

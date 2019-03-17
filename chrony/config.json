@@ -19,9 +19,16 @@
   "ports": { 
     "123/udp": 123
    },
-  "options": { },
+  "options": {
+    "mode": "pool",
+    "ntp_pool": "pool.ntp.org",
+    "ntp_server": ["54.39.13.155","briareus.schulte.org"]
+   },
   "schema": {
-    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)?"
+    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)?",
+    "ntp_pool": "str?",
+    "ntp_server": ["str?"],
+    "mode": "match(^(pool|server)$)"
   },
   "environment": {
     "LOG_FORMAT": "{LEVEL}: {MESSAGE}"
