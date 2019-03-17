@@ -3,7 +3,7 @@
   "version": "dev",
   "slug": "chrony",
   "description": "chrony NTP Server",
-  "url": "https://github.com/hassio-addons/xxxxx",
+  "url": "https://github.com/hassio-addons/addon-chrony",
   "startup": "application",
   "arch": [
     "aarch64",
