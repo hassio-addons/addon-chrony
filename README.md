@@ -104,10 +104,6 @@ record with multiple entries. The application will select which to reference.
 Used by server mode, an array of server names or IP Addresses used as the
 time source. The application will select which to reference.
 
-## Known issues and limitations
-
-- This does not control the local system time and is purely an NTP server.
-
 ## Changelog & Releases
 
 This repository keeps a change log using [GitHub's releases][releases]
