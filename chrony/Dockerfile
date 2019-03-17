@@ -33,7 +33,7 @@ LABEL \
     org.label-schema.name="chrony" \
     org.label-schema.schema-version="1.0" \
     org.label-schema.url="https://community.home-assistant.io/?u=frenck" \
-    org.label-schema.usage="https://github.com/hassio-addons/addon-xxxxx/tree/master/README.md" \
+    org.label-schema.usage="https://github.com/hassio-addons/addon-chrony/tree/master/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
-    org.label-schema.vcs-url="https://github.com/hassio-addons/addon-xxxxx" \
+    org.label-schema.vcs-url="https://github.com/hassio-addons/addon-chrony" \
     org.label-schema.vendor="Community Hass.io Addons"
