@@ -79,7 +79,7 @@ These options are:
 
 - `pool`: References a pool of servers such as pool.ntp.org (Recommended).
 - `server`: References a list of specific names or addresses.
-  
+
 Based on the mode the `ntp_pool` or `ntp_server` option will be used.
 
 ### Option: `ntp_pool`
