@@ -16,16 +16,21 @@
   "hassio_api": true,
   "hassio_role": "default",
   "map": [ ],
+  "privileged": [
+    "SYS_TIME"
+  ],
   "ports": { 
     "123/udp": 123
    },
   "options": {
+    "set_system_clock": true,
     "mode": "pool",
     "ntp_pool": "pool.ntp.org",
     "ntp_server": ["54.39.13.155","briareus.schulte.org"]
    },
   "schema": {
     "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)?",
+    "set_system_clock": "bool",
     "ntp_pool": "str?",
     "ntp_server": ["str?"],
     "mode": "match(^(pool|server)$)"

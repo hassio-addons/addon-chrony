@@ -25,7 +25,7 @@ chrony NTP Server.
 
 An NTP server accessible by all hosts on the local network, useful for setting
 time on devices with controlled internet access (such as cameras).
-Please note this addon will not set the clock of the operating system.
+The addon can also be used to set the system clock.
 
 ## Installation
 
@@ -48,7 +48,13 @@ Example add-on configuration:
 
 ```json
 {
-  "log_level": "info",
+  "set_system_clock": true,
+  "mode": "pool",
+  "ntp_pool": "pool.ntp.org",
+  "ntp_server": [
+    "54.39.13.155",
+    "briareus.schulte.org"
+  ]
 }
 ```
 
@@ -71,6 +77,12 @@ Please note that each level automatically includes log messages from a
 more severe level, e.g., `debug` also shows `info` messages. By default,
 the `log_level` is set to `info`, which is the recommended setting unless
 you are troubleshooting.
+
+### Option: `set_system_clock`
+
+The `set_system_clock` option configures chrony to set the system clock or
+not. For some systems it may be preferable to use a different mechanism for
+setting the system time.
 
 ### Option: `mode`
 

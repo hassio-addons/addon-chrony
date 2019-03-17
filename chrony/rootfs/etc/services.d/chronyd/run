@@ -3,7 +3,14 @@
 # Community Hass.io Add-ons: chrony
 # Runs chrony daemon
 # ==============================================================================
-# shellcheck disable=SC1091
+declare -a options
+
+options+=("-d")
+if bashio::config.false 'set_system_clock'
+then
+    options+=("-x")
+fi
+
 bashio::log.info "Starting chronyd..."
 
-exec chronyd -d -x
+exec chronyd "${options[@]}"
