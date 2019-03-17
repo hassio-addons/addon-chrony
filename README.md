@@ -25,7 +25,7 @@ chrony NTP Server.
 
 ## About
 
-An NTP server accesible by all hosts on the local network, useful for setting
+An NTP server accessible by all hosts on the local network, useful for setting
 time on devices with controlled internet access (such as cameras).  
 Please note this does not set the clock of the Hassio instance.
 
