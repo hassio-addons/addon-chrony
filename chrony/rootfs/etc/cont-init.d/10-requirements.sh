@@ -20,6 +20,7 @@ then
     bashio::log.fatal
     bashio::exit.nok
 fi
+
 if bashio::config.equals 'mode' 'server' \
     && bashio::config.is_empty 'ntp_server';
 then
