@@ -4,7 +4,7 @@
   "slug": "chrony",
   "description": "chrony NTP Server",
   "url": "https://github.com/hassio-addons/addon-chrony",
-  "startup": "application",
+  "startup": "system",
   "arch": [
     "aarch64",
     "amd64",
@@ -19,7 +19,7 @@
   "privileged": [
     "SYS_TIME"
   ],
-  "ports": { 
+  "ports": {
     "123/udp": 123
    },
   "options": {
