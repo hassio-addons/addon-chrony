@@ -34,8 +34,5 @@
     "ntp_pool": "str?",
     "ntp_server": ["str?"],
     "mode": "match(^(pool|server)$)"
-  },
-  "environment": {
-    "LOG_FORMAT": "{LEVEL}: {MESSAGE}"
   }
 }
