@@ -79,8 +79,8 @@ you are troubleshooting.
 
 ### Option: `set_system_clock`
 
-The `set_system_clock` option configures chrony to set the system clock or
-not. For some systems it may be preferable to use a different mechanism for
+The `set_system_clock` option configures chrony to set the local system clock.
+For some systems it may be preferable to use a different mechanism for
 setting the system time.
 
 ### Option: `mode`
