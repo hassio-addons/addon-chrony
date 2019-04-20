@@ -1,8 +1,11 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: chrony
-# This files check if all user configuration requirements are met
+# Configures chrony
 # ==============================================================================
+readonly CHRONY_CONF='/etc/chrony/chrony.conf'
+declare mode
+declare -a serverlist
 
 # Check running mode
 if bashio::config.equals 'mode' 'pool' \
@@ -36,3 +39,14 @@ then
     bashio::log.fatal
     bashio::exit.nok
 fi
+
+# Write configuration file
+mode=$(bashio::config 'mode')
+bashio::log.debug "Running in NTP mode: ${mode}"
+for server in $(bashio::config "ntp_${mode}"); do
+    bashio::log.debug "Adding server ${server}"
+    echo "${mode} ${server} iburst" >> ${CHRONY_CONF}
+    serverlist+=("${server}")
+done
+
+echo "initstepslew 10 ${serverlist[*]}" >> ${CHRONY_CONF}
