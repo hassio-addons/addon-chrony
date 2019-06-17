@@ -205,7 +205,7 @@ SOFTWARE.
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-chrony.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2019.svg
 [npm-packages]: https://www.npmjs.com
-[project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
+[project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [reddit]: https://reddit.com/r/homeassistant
 [releases-shield]: https://img.shields.io/github/release/hassio-addons/addon-chrony.svg
 [releases]: https://github.com/hassio-addons/addon-chrony/releases
