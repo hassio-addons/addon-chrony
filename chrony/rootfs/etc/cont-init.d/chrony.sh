@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: chrony
+# Community Home Assistant Add-ons: chrony
 # Configures chrony
 # ==============================================================================
 readonly CHRONY_CONF='/etc/chrony/chrony.conf'

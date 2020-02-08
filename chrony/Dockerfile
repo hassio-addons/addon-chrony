@@ -36,4 +36,4 @@ LABEL \
     org.label-schema.usage="https://github.com/hassio-addons/addon-chrony/tree/master/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
     org.label-schema.vcs-url="https://github.com/hassio-addons/addon-chrony" \
-    org.label-schema.vendor="Community Hass.io Addons"
+    org.label-schema.vendor="Community Home Assistant Addons"
