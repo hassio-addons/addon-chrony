@@ -1,4 +1,4 @@
-# Community Home Assistant Add-ons: chrony
+# Community Home Assistant Add-on: chrony
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
@@ -41,16 +41,13 @@ comparison to installing any other Home Assistant add-on.
 
 Example add-on configuration:
 
-```json
-{
-  "set_system_clock": true,
-  "mode": "pool",
-  "ntp_pool": "pool.ntp.org",
-  "ntp_server": [
-    "54.39.13.155",
-    "briareus.schulte.org"
-  ]
-}
+```yaml
+set_system_clock: true
+mode: pool
+ntp_pool: pool.ntp.org
+ntp_server":
+  - 54.39.13.155
+  - briareus.schulte.org
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
