@@ -45,7 +45,7 @@ Example add-on configuration:
 set_system_clock: true
 mode: pool
 ntp_pool: pool.ntp.org
-ntp_server":
+ntp_server:
   - 54.39.13.155
   - briareus.schulte.org
 ```
