@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Home Assistant Add-on: chrony
+# Home Assistant Community Add-on: chrony
 # Runs chrony daemon
 # ==============================================================================
 declare -a options

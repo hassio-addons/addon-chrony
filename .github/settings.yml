@@ -1,6 +1,6 @@
 ---
 repository:
-  description: "chrony - Community Home Assistant Add-ons"
+  description: "chrony - Home Assistant Community Add-ons"
   homepage: https://addons.community
   topics: ntp, chrony, addon, addons, home-assistant, homeassistant
   private: false
