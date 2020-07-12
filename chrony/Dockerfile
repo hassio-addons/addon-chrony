@@ -9,7 +9,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache \
-        chrony=3.5-r1
+        chrony=3.5-r2
 
 # Copy root filesystem
 COPY rootfs /
