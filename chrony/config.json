@@ -19,10 +19,7 @@
     "set_system_clock": true,
     "mode": "pool",
     "ntp_pool": "pool.ntp.org",
-    "ntp_server": [
-      "54.39.13.155",
-      "briareus.schulte.org"
-    ]
+    "ntp_server": ["54.39.13.155", "briareus.schulte.org"]
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
