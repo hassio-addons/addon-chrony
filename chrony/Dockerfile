@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:12.2.4
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:13.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -9,7 +9,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache \
-        chrony=4.2-r0
+        chrony=4.3-r0
 
 # Copy root filesystem
 COPY rootfs /
