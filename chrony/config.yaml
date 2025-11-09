@@ -18,15 +18,14 @@ ports_description:
   123/udp: NTP; Network Time Protocol
 options:
   set_system_clock: true
-  mode: pool
   ntp_pool: pool.ntp.org
-  ntp_server:
-    - 54.39.13.155
-    - briareus.schulte.org
+  ntp_server: []
+  pool_maxsources: 4
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   set_system_clock: bool
   ntp_pool: str?
   ntp_server:
     - str?
-  mode: list(pool|server)
+  pool_maxsources: int(1,16)
+  mode: list(pool|server)?

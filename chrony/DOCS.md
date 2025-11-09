@@ -26,11 +26,11 @@ Example add-on configuration:
 
 ```yaml
 set_system_clock: true
-mode: pool
 ntp_pool: pool.ntp.org
 ntp_server:
   - 54.39.13.155
   - briareus.schulte.org
+pool_maxsources: 4
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
@@ -61,23 +61,34 @@ setting the system time.
 
 ### Option: `mode`
 
-The `mode` option configures chrony to use either `pool` or `server` mode.
-These options are:
-
-- `pool`: References a pool of servers such as pool.ntp.org (Recommended).
-- `server`: References a list of specific names or addresses.
-
-Based on the mode the `ntp_pool` or `ntp_server` option will be used.
+Deprecated, ignored.
 
 ### Option: `ntp_pool`
 
-Used by pool mode and configures the pool name to be used, should be a DNS
-record with multiple entries. The application will select which to reference.
+Configures the NTP pool name to be used, should be DNS record with multiple
+entries. The application will select which to reference.
+
+If you don't want to use a pool, set the configuration to empty.
+
+```yaml
+ntp_pool: ""
+```
 
 ### Option: `ntp_server`
 
-Used by server mode, an array of server names or IP Addresses used as the
-time source. The application will select which to reference.
+An array of server names or IP Addresses used as the time sources.
+The application will select which to reference.
+
+If you don't want to use servers, set the configuration to empty.
+
+```yaml
+ntp_server: []
+```
+
+### Option: `pool_maxsources`
+
+The number of servers to select from the pool DNS record. Must be between
+1 and 16. The default is 4.
 
 ## Changelog & Releases
 

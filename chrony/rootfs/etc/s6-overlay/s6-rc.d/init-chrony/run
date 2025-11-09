@@ -5,48 +5,37 @@
 # Configures chrony
 # ==============================================================================
 readonly CHRONY_CONF='/etc/chrony/chrony.conf'
-declare mode
+declare ntp_pool
+declare pool_maxsources
 declare -a serverlist
 
-# Check running mode
-if bashio::config.equals 'mode' 'pool' \
+# Check if configuration is valid.
+if bashio::config.is_empty 'ntp_server' \
     && bashio::config.is_empty 'ntp_pool';
 then
     bashio::log.fatal
     bashio::log.fatal 'Configuration of this add-on is incomplete.'
     bashio::log.fatal
-    bashio::log.fatal 'pool mode is configured but the ntp_pool'
-    bashio::log.fatal 'is empty'
-    bashio::log.fatal
-    bashio::log.fatal 'If using pool mode please set the'
-    bashio::log.fatal '"ntp_pool" option in the add-on'
-    bashio::log.fatal 'configuration.'
+    bashio::log.fatal 'Both "ntp_pool" and "ntp_server" configurations'
+    bashio::log.fatal 'are empty in the add-on configuration.'
     bashio::log.fatal
     bashio::exit.nok
 fi
 
-if bashio::config.equals 'mode' 'server' \
-    && bashio::config.is_empty 'ntp_server';
+# Write the configuration file.
+
+ntp_pool=$(bashio::config "ntp_pool")
+if [[ -n "${ntp_pool}" ]]
 then
-    bashio::log.fatal
-    bashio::log.fatal 'Configuration of this add-on is incomplete.'
-    bashio::log.fatal
-    bashio::log.fatal 'server mode is configured but the ntp_server'
-    bashio::log.fatal 'is empty'
-    bashio::log.fatal
-    bashio::log.fatal 'If using server mode please set the'
-    bashio::log.fatal '"ntp_server" option in the add-on'
-    bashio::log.fatal 'configuration.'
-    bashio::log.fatal
-    bashio::exit.nok
+    pool_maxsources=$(bashio::config "pool_maxsources")
+    bashio::log.debug "Adding pool ${ntp_pool}"
+    echo "pool ${ntp_pool} iburst maxsources ${pool_maxsources}" >> ${CHRONY_CONF}
+    serverlist+=("${ntp_pool}")
 fi
 
-# Write configuration file
-mode=$(bashio::config 'mode')
-bashio::log.debug "Running in NTP mode: ${mode}"
-for server in $(bashio::config "ntp_${mode}"); do
+for server in $(bashio::config "ntp_server"); do
     bashio::log.debug "Adding server ${server}"
-    echo "${mode} ${server} iburst" >> ${CHRONY_CONF}
+    echo "server ${server} iburst" >> ${CHRONY_CONF}
     serverlist+=("${server}")
 done
 
